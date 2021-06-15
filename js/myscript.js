@@ -1,5 +1,5 @@
 
-    window.onload = function () {
+window.onload = function () {
         document.getElementById('input1').value = 0;
         document.getElementById('input2').value = 0;
     }
@@ -7,11 +7,11 @@
 
     const select = document.querySelectorAll("select")
     const input = document.querySelectorAll("input")
-    const API_URL = "http://api.exchangeratesapi.io/v1/latest?access_key=a1db97bbf769b10b047da293ef680761";
+    const API_URL = "http://data.fixer.io/api/latest?access_key=dcdcae1648e8ce5ca378068ac5417dcb";
     let html = "";
     async function currency() {
         const res = await fetch(API_URL);
-
+        console.log(res);
         const data = await res.json();
         const arrKeys = Object.keys(data.rates);
         const rates = data.rates;
